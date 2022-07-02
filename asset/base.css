@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #ffc600;
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #c6c6c6;
+  --text-color: #07294d;
+  --dark-blue-color: #07294d;
+}
+
+/* html {
+  font-size: 62.5%;
+} */
+
+.app-container {
+  background-color: var(--white-color);
+}
+
