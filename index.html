@@ -13,11 +13,37 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./asset/style/base.css" />
+    <link rel="stylesheet" href="./asset/style/preloader.css" />
+    <link rel="stylesheet" href="./asset//style/slide.css" />
     <link rel="stylesheet" href="./asset/style/header.css" />
     <title>MVP Excercise</title>
   </head>
   <body>
     <div class="app-container">
+      <div class="prev-loader">
+        <div class="loader-container">
+          <i class="fa-solid fa-spinner prevloader_loading-icon"></i>
+          <!-- <span class="loader-cube-1"></span>
+          <span class="loader-cube-2"></span>
+          <span class="loader-cube-3 loader-cube-color"></span>
+          <span class="loader-cube-4"></span>
+          <span class="loader-cube-5"></span>
+          <span class="loader-cube-6"></span>
+          <span class="loader-cube-7"></span>
+          <span class="loader-cube-8"></span> -->
+        </div>
+      </div>
+      <div class="search-modal">
+        <span class="search-modal_close-icon">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+        <div class="search-modal_search-container">
+          <input type="text" class="search-modal_search-input" />
+          <span class="search-modal_search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+        </div>
+      </div>
       <header class="header">
         <div class="header-top">
           <div class="custom-container">
@@ -87,14 +113,114 @@
             </div>
             <div class="header-menu-container">
               <ul class="header-menu">
-                <li class="header-menu_item header-menu_item--active">Home</li>
-                <li class="header-menu_item">Pages</li>
-                <li class="header-menu_item">Courses</li>
-                <li class="header-menu_item">Events</li>
-                <li class="header-menu_item">Teachers</li>
-                <li class="header-menu_item">Blog</li>
-                <li class="header-menu_item">Shop</li>
-                <li class="header-menu_item">Contact</li>
+                <li class="header-menu_item header-menu_item--active">
+                  <a href="/">Home</a>
+                  <ul class="header-sub-menu">
+                    <li
+                      class="header-sub-menu_item header-sub-menu_item--active"
+                    >
+                      <a href="/">Home 1</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Home 2</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Home 3</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Home 4</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Page</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">About us</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Gallery</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Privacy policy</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">FAQ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Courses</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">Courses</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Course single</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Events</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">Events list 1</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Events list 2</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Event single</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Teachers</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">Teachers</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Teachers 2</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Teacher single</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Blog</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">Blog</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Blog single</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Shop</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">Shop</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Shop single</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header-menu_item">
+                  <a href="/">Contact</a>
+                  <ul class="header-sub-menu">
+                    <li class="header-sub-menu_item">
+                      <a href="/">Contact us</a>
+                    </li>
+                    <li class="header-sub-menu_item">
+                      <a href="/">Contact us 2</a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </div>
             <div class="header-nav-icon">
@@ -108,6 +234,90 @@
           </div>
         </div>
       </header>
+
+      <div class="main-slide">
+        <div class="main-slide_slide-detail">
+          <h1>Choose the right theme for education</h1>
+          <p>
+            Donec vitae sapien ut libearo venenatis faucibus. Nullam quis
+            ante. Etiam sit amet orci eget eros faucibus tincidunt Sed
+            fringilla mauri amet nibh.
+          </p>
+          <div class="main-slide_slide-detail-button">
+            <span>
+              <a href="/">Read more</a>
+            </span>
+            <span>
+              <a href="/">Get started</a>
+            </span>
+          </div>
+        </div>
+        <span class="main-slide-control main-slide-control_left">
+          <i class="fa-solid fa-angle-left"></i>
+        </span>
+        <span class="main-slide-control main-slide-control_right">
+          <i class="fa-solid fa-angle-right"></i>
+        </span>
+        <div class="main-slide-container">
+          <div class="main-slide_slide">
+            <img src="./asset//images/slide/slide1.jpg" alt="slide 1" />
+            <!-- <div class="main-slide_slide-detail">
+              <h1>Choose the right theme for education</h1>
+              <p>
+                Donec vitae sapien ut libearo venenatis faucibus. Nullam quis
+                ante. Etiam sit amet orci eget eros faucibus tincidunt Sed
+                fringilla mauri amet nibh.
+              </p>
+              <div class="main-slide_slide-detail-button">
+                <span>
+                  <a href="/">Read more</a>
+                </span>
+                <span>
+                  <a href="/">Get started</a>
+                </span>
+              </div>
+            </div> -->
+          </div>
+          <div class="main-slide_slide">
+            <img src="./asset//images/slide/slide2.jpg" alt="slide 2" />
+            <!-- <div class="main-slide_slide-detail">
+              <h1>Choose the right theme for education</h1>
+              <p>
+                Donec vitae sapien ut libearo venenatis faucibus. Nullam quis
+                ante. Etiam sit amet orci eget eros faucibus tincidunt Sed
+                fringilla mauri amet nibh.
+              </p>
+              <div class="main-slide_slide-detail-button">
+                <span>
+                  <a href="/">Read more</a>
+                </span>
+                <span>
+                  <a href="/">Get started</a>
+                </span>
+              </div>
+            </div> -->
+          </div>
+          <div class="main-slide_slide">
+            <img src="./asset//images/slide/slide3.jpg" alt="slide 3" />
+            <!-- <div class="main-slide_slide-detail">
+              <h1>Choose the right theme for education</h1>
+              <p>
+                Donec vitae sapien ut libearo venenatis faucibus. Nullam quis
+                ante. Etiam sit amet orci eget eros faucibus tincidunt Sed
+                fringilla mauri amet nibh.
+              </p>
+              <div class="main-slide_slide-detail-button">
+                <span>
+                  <a href="/">Read more</a>
+                </span>
+                <span>
+                  <a href="/">Get started</a>
+                </span>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>

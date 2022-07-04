@@ -1,0 +1,133 @@
+.main-slide {
+  width: 100%;
+  height: 760px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-slide-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+  transition: all 0.75s linear;
+}
+
+.main-slide:hover .main-slide-control {
+  opacity: 1;
+}
+
+.main-slide:hover .main-slide-control_left {
+  left: 32px;
+}
+
+.main-slide:hover .main-slide-control_right {
+  right: 32px;
+}
+
+.main-slide-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  z-index: 50;
+  font-size: 2rem;
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.main-slide-control:hover {
+  background-color: var(--primary-color);
+}
+
+.main-slide-control_left {
+  left: 0px;
+}
+
+.main-slide-control_right {
+  right: 0px;
+}
+
+
+.main-slide_slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 0 0 100%;
+}
+
+.main-slide_slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-blue-color);
+  opacity: 0.4;
+}
+
+.main-slide_slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-slide_slide-detail {
+  position: absolute;
+  width: 680px;
+  z-index: 20;
+  color: #fff;
+  top: 120px;
+  left: 200px;
+  font-weight: 600;
+}
+
+.main-slide_slide-detail h1 {
+  font-size: 3.75rem;
+  width: 100%;
+  line-height: 64px;
+  white-space: normal;
+  margin-bottom: 24px;
+  transition: all 0.4s linear;
+  opacity: 0;
+}
+
+.main-slide_slide-detail p {
+  white-space: normal;
+  text-align: left;
+  transition: all 0.4s linear;
+}
+
+.main-slide_slide-detail-button {
+  display: flex;
+  margin-top: 48px;
+}
+
+.main-slide_slide-detail-button span {
+  width: 180px;
+  text-transform: capitalize;
+  padding: 12px 32px;
+  background-color: var(--primary-color);
+  margin-right: 16px;
+  border-radius: 8px;
+  color: var(--black-color);
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-align: center;
+  transition: all 0.4s linear;
+}
+
+.main-slide_slide-detail-button span:hover {
+  color: var(--primary-color);
+  background-color: var(--dark-blue-color);
+}
+
+
