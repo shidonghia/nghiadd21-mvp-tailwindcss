@@ -1,12 +1,26 @@
-let mainSlideActive = 0;
-
+// Search modal
 const headerSearchIcon = document.querySelector(".header_search-icon");
 const searchModal = document.querySelector(".search-modal");
 const closeSearchModalButton = document.querySelector(
   ".search-modal_close-icon"
 );
-const preloader = document.querySelector(".prev-loader");
-const mainSlide = document.querySelector('.main-slide')
+
+const displaySearchModal = () => {
+  searchModal.style.opacity = 1;
+  searchModal.style.zIndex = 50;
+};
+
+const closeSearchModal = () => {
+  searchModal.style.opacity = 0;
+  searchModal.style.zIndex = 0;
+};
+
+headerSearchIcon.addEventListener("click", displaySearchModal);
+closeSearchModalButton.addEventListener("click", closeSearchModal);
+
+// Slide
+
+let mainSlideActive = 0;
 const mainSlideContainer = document.querySelector(".main-slide-container");
 const mainSlideDetailHeader = document.querySelector(
   ".main-slide_slide-detail h1"
@@ -22,7 +36,6 @@ const mainSlideControlRight = document.querySelector(
   ".main-slide-control_right"
 );
 const mainSlideItems = document.querySelectorAll(".main-slide_slide");
-
 let mainSlideAuto = setInterval(nextSlide, 5000);
 
 const mainSlideDetailHeaderAnimation = () => {
@@ -43,18 +56,8 @@ const mainSlideDetailRestAnimation = (element) => {
   }, 1000);
 };
 
-const displaySearchModal = () => {
-  searchModal.style.opacity = 1;
-  searchModal.style.zIndex = 50;
-};
-
-const closeSearchModal = () => {
-  searchModal.style.opacity = 0;
-  searchModal.style.zIndex = 0;
-};
-
-function nextSlide (){
-  clearInterval(mainSlideAuto)
+function nextSlide() {
+  clearInterval(mainSlideAuto);
   if (mainSlideActive === mainSlideItems.length - 1) {
     mainSlideActive = 0;
   } else {
@@ -66,10 +69,10 @@ function nextSlide (){
   mainSlideDetailRestAnimation(mainSlideDetailButton[0]);
   mainSlideDetailRestAnimation(mainSlideDetailButton[1]);
   mainSlideAuto = setInterval(nextSlide, 5000);
-};
+}
 
 function prevSlide() {
-  clearInterval(mainSlideAuto)  
+  clearInterval(mainSlideAuto);
   if (mainSlideActive === 0) {
     mainSlideActive = mainSlideItems.length - 1;
   } else {
@@ -81,21 +84,14 @@ function prevSlide() {
   mainSlideDetailRestAnimation(mainSlideDetailButton[0]);
   mainSlideDetailRestAnimation(mainSlideDetailButton[1]);
   mainSlideAuto = setInterval(nextSlide, 5000);
-};
+}
 
-headerSearchIcon.addEventListener("click", displaySearchModal);
-closeSearchModalButton.addEventListener("click", closeSearchModal);
 mainSlideControlRight.addEventListener("click", nextSlide);
 mainSlideControlLeft.addEventListener("click", prevSlide);
 
-mainSlide.addEventListener("mouseover", () => {
-  clearInterval(mainSlideAuto) 
-})
+// Preloader
 
-mainSlide.addEventListener("mouseout", () => {
-  mainSlideAuto = setInterval(nextSlide, 5000);
-})
-
+const preloader = document.querySelector(".prev-loader");
 window.onload = hidePreloader = () => {
   setTimeout(() => {
     preloader.style.display = "none";
@@ -106,3 +102,33 @@ window.onload = hidePreloader = () => {
   }, 500);
 };
 
+// Category slide
+
+let categorySlidesTranslateX = 0;
+const widthTranslate = document.querySelector(
+  ".category-slides_slide-container"
+).clientWidth;
+const categorySlides = document.querySelector(".category-slides");
+const categorySlideControlLeft = document.querySelector(
+  ".category-slides_control--left"
+);
+const categorySlideControlRight = document.querySelector(
+  ".category-slides_control--right"
+);
+
+function prevCategorySlide() {
+  if (categorySlidesTranslateX > 0) {
+    categorySlidesTranslateX -= widthTranslate;
+    categorySlides.style.transform = `translateX(-${categorySlidesTranslateX}px)`;
+  }
+}
+
+function nextCategorySlide() {
+  if (categorySlidesTranslateX < widthTranslate * 3) {
+    categorySlidesTranslateX += widthTranslate;
+    categorySlides.style.transform = `translateX(-${categorySlidesTranslateX}px)`;
+  }
+}
+
+categorySlideControlLeft.addEventListener("click", prevCategorySlide);
+categorySlideControlRight.addEventListener("click", nextCategorySlide);

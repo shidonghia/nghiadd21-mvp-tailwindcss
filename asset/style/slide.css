@@ -38,7 +38,7 @@
   opacity: 0;
   align-items: center;
   justify-content: center;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -83,7 +83,7 @@
 .main-slide_slide-detail {
   position: absolute;
   width: 680px;
-  z-index: 20;
+  z-index: 5;
   color: #fff;
   top: 120px;
   left: 200px;
@@ -123,6 +123,7 @@
   font-size: 1.25rem;
   text-align: center;
   transition: all 0.4s linear;
+  cursor: pointer;
 }
 
 .main-slide_slide-detail-button span:hover {
