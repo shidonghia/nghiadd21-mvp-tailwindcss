@@ -18,3 +18,7 @@
 a {
   cursor: pointer;
 }
+
+a:hover {
+  color: var(--primary-color);
+}
