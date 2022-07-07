@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="./asset/style/about.css" />
     <link rel="stylesheet" href="./asset/style/apply-part.css" />
     <link rel="stylesheet" href="./asset/style/courses.css" />
+    <link rel="stylesheet" href="./asset/style/video.css" />
+    <link rel="stylesheet" href="./asset/style/teacher.css" />
+    <link rel="stylesheet" href="./asset/style/publication.css">
     <title>MVP Excercise</title>
   </head>
   <body>
@@ -38,6 +41,7 @@
           <span class="loader-cube-8"></span> -->
         </div>
       </div>
+
       <div class="search-modal">
         <span class="search-modal_close-icon">
           <i class="fa-solid fa-xmark"></i>
@@ -49,6 +53,16 @@
           </span>
         </div>
       </div>
+
+      <div class="video-modal">
+        <div class="video-overlay"></div>
+        <div class="video-embed">
+          <span>
+            <i class="fa-solid fa-x"></i>
+          </span>
+        </div>
+      </div>
+
       <header class="header">
         <div class="header-top">
           <div class="custom-container">
@@ -540,7 +554,293 @@
           </div>
 
           <div class="courses-slides">
-            <div class="courses-slides-container">
+            <div class="courses-slides-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video">
+        <div class="video-container">
+          <div class="video-button">
+            <span>
+              <i class="fa-solid fa-play"></i>
+            </span>
+          </div>
+          <div class="video-feature">
+            <div class="video-feature_title">
+              <h3>Our Facilities</h3>
+            </div>
+
+            <ul class="video-feature_facilities">
+              <li>
+                <img
+                  class="video-feature_facilities-img"
+                  src="./asset/images/video/certificate.png"
+                  alt="certificate"
+                />
+                <div class="video-feature_facilities-content">
+                  <h4>Global Certificate</h4>
+                  <p>
+                    Gravida nibh vel velit auctor aliquetn auci elit cons
+                    solliazcitudirem sem quibibendum sem nibhutis.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img
+                  class="video-feature_facilities-img"
+                  src="./asset/images/video/support.png"
+                  alt="suport"
+                />
+                <div class="video-feature_facilities-content">
+                  <h4>Alumni Support</h4>
+                  <p>
+                    Gravida nibh vel velit auctor aliquetn auci elit cons
+                    solliazcitudirem sem quibibendum sem nibhutis.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <img
+                  class="video-feature_facilities-img"
+                  src="./asset/images/video/book.png"
+                  alt="book"
+                />
+                <div class="video-feature_facilities-content">
+                  <h4>Books & Library</h4>
+                  <p>
+                    Gravida nibh vel velit auctor aliquetn auci elit cons
+                    solliazcitudirem sem quibibendum sem nibhutis.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="video-feature_bg"></div>
+      </div>
+
+      <div class="teacher">
+        <div class="teacher-introduce">
+          <div class="teacher-introduce_title">
+            <h5>Featured Teachers</h5>
+            <h2>Meet Our teachers</h2>
+          </div>
+          <div class="teacher-introduce_content">
+            <p>
+              Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem
+              quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis
+              sed odio sit amet nibh vulputate cursus a sit amet . Morbi
+              accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris.
+              <br />
+              <br />
+              auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit
+              amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum
+              velit. Nam nec tellus a odio tincidunt mauris
+            </p>
+            <a href="/">Career with us</a>
+          </div>
+        </div>
+        <div class="teacher-content">
+          <div class="teacher-content_teacher">
+            <div class="teacher-content_teacher-container">
+              <img src="./asset/images/teacher/mark-alen.jpg" alt="Mark Alen" />
+              <div class="teacher-content_teacher-detail">
+                <a href="/"><h6>Mark Alen</h6></a>
+                <span>Vice Chancellor</span>
+              </div>
+            </div>
+          </div>
+          <div class="teacher-content_teacher">
+            <div class="teacher-content_teacher-container">
+              <img
+                src="./asset/images/teacher/david-card.jpg"
+                alt="David Card"
+              />
+              <div class="teacher-content_teacher-detail">
+                <a href="/"><h6>David Card</h6></a>
+                <span>Pro Chancellor</span>
+              </div>
+            </div>
+          </div>
+          <div class="teacher-content_teacher">
+            <div class="teacher-content_teacher-container">
+              <img
+                src="./asset/images/teacher/rebeka-alig.jpg"
+                alt="Rebeka Alig"
+              />
+              <div class="teacher-content_teacher-detail">
+                <a href="/"><h6>Rebeka Alig</h6></a>
+                <span>Pro Chancellor</span>
+              </div>
+            </div>
+          </div>
+          <div class="teacher-content_teacher">
+            <div class="teacher-content_teacher-container">
+              <img
+                src="./asset/images/teacher/hanna-bein.jpg"
+                alt="Hanna Bein"
+              />
+              <div class="teacher-content_teacher-detail">
+                <a href="/"><h6>Hanna Bein</h6></a>
+                <span>Aerobics head</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-container">
+        <div class="publication">
+          <div class="publication-introduce">
+            <div class="publication-introduce_title">
+              <h5>Publications</h5>
+              <h2>From Store</h2>
+            </div>
+            <div class="publication-introduce_products-btn">
+              <a href="/">All Products</a>
+            </div>
+          </div>
+          <div class="publication-products">
+            <div class="publication-products_product-container">
+              <div class="publication-products_product-wrapper">
+                <div class="publication-products_product">
+                  <div class="publication-products_product-img">
+                    <div class="publication-products_product-img-overlay">
+                      <a href="/">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                      <a href="/">
+                        <i class="fa-regular fa-heart"></i>
+                      </a>
+                    </div>
+                    <img src="./asset/images/publication/stones-the-road.jpg" alt="Stones The Road">
+                  </div>
+                  <div class="publication-products_product-content">
+                    <div class="publication-products_product-detail">
+                      <h5><a href="/">Stones The Road</a></h5>
+                      <p>By <span>Scott Trench</span></p>
+                    </div>
+                    <div class="publication-products_product-price-container">
+                      <div class="publication-products_product-price">
+                        <span class="publication-products_product-price--origin">$250</span>
+                        <span class="publication-products_product-price--sale">
+                          $200
+                        </span>
+                      </div>
+                      <a href="/" class="publication-products_product-buy-btn">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Buy Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="publication-products_product-container">
+              <div class="publication-products_product-wrapper">
+                <div class="publication-products_product">
+                  <div class="publication-products_product-img">
+                    <div class="publication-products_product-img-overlay">
+                      <a href="/">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                      <a href="/">
+                        <i class="fa-regular fa-heart"></i>
+                      </a>
+                    </div>
+                    <img src="./asset/images/publication/the-stranded.jpg" alt="The Stranded">
+                  </div>
+                  <div class="publication-products_product-content">
+                    <div class="publication-products_product-detail">
+                      <h5><a href="/">The Stranded</a></h5>
+                      <p>By <span>Scott Trench</span></p>
+                    </div>
+                    <div class="publication-products_product-price-container">
+                      <div class="publication-products_product-price">
+                        <span class="publication-products_product-price--origin">$250</span>
+                        <span class="publication-products_product-price--sale">
+                          $200
+                        </span>
+                      </div>
+                      <a href="/" class="publication-products_product-buy-btn">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Buy Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="publication-products_product-container">
+              <div class="publication-products_product-wrapper">
+                <div class="publication-products_product">
+                  <div class="publication-products_product-img">
+                    <div class="publication-products_product-img-overlay">
+                      <a href="/">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                      <a href="/">
+                        <i class="fa-regular fa-heart"></i>
+                      </a>
+                    </div>
+                    <img src="./asset/images/publication/the-sicario.jpg" alt="The Sicario">
+                  </div>
+                  <div class="publication-products_product-content">
+                    <div class="publication-products_product-detail">
+                      <h5><a href="/">The Sicario</a></h5>
+                      <p>By <span>Scott Trench</span></p>
+                    </div>
+                    <div class="publication-products_product-price-container">
+                      <div class="publication-products_product-price">
+                        <span class="publication-products_product-price--origin">$250</span>
+                        <span class="publication-products_product-price--sale">
+                          $200
+                        </span>
+                      </div>
+                      <a href="/" class="publication-products_product-buy-btn">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Buy Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="publication-products_product-container">
+              <div class="publication-products_product-wrapper">
+                <div class="publication-products_product">
+                  <div class="publication-products_product-img">
+                    <div class="publication-products_product-img-overlay">
+                      <a href="/">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                      <a href="/">
+                        <i class="fa-regular fa-heart"></i>
+                      </a>
+                    </div>
+                    <img src="./asset/images/publication/there-were-none.jpg" alt="There Were None">
+                  </div>
+                  <div class="publication-products_product-content">
+                    <div class="publication-products_product-detail">
+                      <h5><a href="/">There Were None</a></h5>
+                      <p>By <span>Scott Trench</span></p>
+                    </div>
+                    <div class="publication-products_product-price-container">
+                      <div class="publication-products_product-price">
+                        <span class="publication-products_product-price--origin">$250</span>
+                        <span class="publication-products_product-price--sale">
+                          $200
+                        </span>
+                      </div>
+                      <a href="/" class="publication-products_product-buy-btn">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Buy Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

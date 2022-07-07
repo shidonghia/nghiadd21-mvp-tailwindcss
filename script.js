@@ -322,3 +322,26 @@ function fetchCourses() {
       renderCourse(res.data)
     });
 }
+
+// Video
+
+const videoPlayButton = document.querySelector(".video-button")
+const videoCloseButton = document.querySelector(".video-embed span")
+const videoModal = document.querySelector(".video-modal")
+const videoEmbed = document.querySelector(".video-embed")
+console.log(videoCloseButton)
+function videoDisplayModal() {
+  const elementIframe = document.createElement("iframe")
+  elementIframe.setAttribute("src", "https://www.youtube.com/embed/bRRtdzJH1oE")
+  elementIframe.setAttribute("frameborder", "0")
+  videoEmbed.appendChild(elementIframe)
+  videoModal.classList.add("video-modal--display")
+}
+
+function hideVideoModal() {
+  videoEmbed.removeChild(videoEmbed.lastChild)
+  videoModal.classList.remove("video-modal--display")
+}
+
+videoPlayButton.addEventListener("click", videoDisplayModal)
+videoCloseButton.addEventListener("click", hideVideoModal)

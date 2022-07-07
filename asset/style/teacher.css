@@ -1,0 +1,113 @@
+.teacher {
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 120px;
+  justify-content: space-between;
+}
+
+.teacher-introduce {
+  width: 40%;
+}
+
+.teacher-introduce_title {
+  padding-top: 52px;
+  font-weight: bold;
+} 
+
+.teacher-introduce_title h5 {
+  position: relative;
+  padding-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.teacher-introduce_title h5::after {
+  content: "";
+  position: absolute;
+  width: 36px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.teacher-introduce_title h2 {
+  padding-top: 12px;
+  font-size: 3rem;
+}
+
+.teacher-introduce_content {
+  padding-top: 32px
+}
+
+.teacher-introduce_content a {
+  display: inline-block;
+  margin-top: 56px;
+  min-width: 180px;
+  height: 56px;
+  padding: 0 32px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 56px;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: all 0.3s linear;
+}
+
+.teacher-introduce_content a:hover {
+  background-color: var(--dark-blue-color);
+}
+
+.teacher-content {
+  width: 52%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.teacher-content_teacher {
+  margin-top: 32px;
+  flex: 0 0 50%;
+  padding: 0 16px;
+}
+
+.teacher-content_teacher-container {
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}        
+
+.teacher-content_teacher-container img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s linear;
+  object-fit: cover;
+}
+
+.teacher-content_teacher-container:hover img {
+  transform: scale(1.1);
+}
+
+.teacher-content_teacher-detail {
+  position: absolute;
+  width: 80%;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white-color);
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.teacher-content_teacher-detail a {
+  font-weight: bold;
+}
+
+.teacher-content_teacher-detail span {
+  color: #8a8a8a;
+  font-size: 0.9rem;
+}
