@@ -185,4 +185,24 @@
 }
 
 
+/* slick */
 
+.your-class {
+  max-width: 900px;
+  height: 400px;
+  margin: auto;
+  background-color: #ccc;
+}
+
+.your-class div {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.your-class div h3 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,130 @@
+.testimonial {
+  background-image: url(../images/testimanial/background.jpg);
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.testimonial::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #07294d;
+  opacity: 0.7;
+}
+
+.testimonial-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 110px 0;
+}
+
+.testimonial-title {
+  font-weight: bold;
+  color: var(--white-color);
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.testimonial-title h5 {
+  position: relative;
+  font-size: 1.25rem;
+  padding-bottom: 8px;
+}
+
+.testimonial-title h5::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid var(--white-color);
+  width: 36px;
+}
+
+.testimonial-title h2 {
+  font-size: 3rem;
+  padding-top: 12px;
+  line-height: 3rem;
+}
+
+.testimonial-slides {
+  position: relative;
+  display: flex;
+  margin-top: 40px;
+}
+
+.testimonial-slides_slide {
+  padding: 0 16px;
+  flex: 0 0 50%;
+}
+
+.testimonial-slides_slide-container {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-slides_slide-avatar {
+  width: 160px;
+  position: relative;
+}
+
+.testimonial-slides_slide-avatar img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.testimonial-slides_slide-avatar span {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  top: 0;
+  right: 0;
+  transform: translate(-80%, -50%);
+}
+
+.testimonial-slides_slide-content {
+  flex: 1;
+  color: var(--white-color);
+}
+
+.testimonial-slides_slide-content h6 {
+  padding-bottom: 4px;
+  padding-top: 32px;
+  font-weight: bold;
+}
+
+.testimonial-slides_slide-content span {
+  font-size: 1.1rem;
+}
+
+/* Custom dots slick slide */
+
+.testimonial-slides .slick-dots {
+  bottom: -48px;
+}
+
+.testimonial-slides .slick-dots li {
+  width: 12px;
+  height: 12px;
+}
+
+.testimonial-slides .slick-dots li.slick-active button::before {
+  color: var(--primary-color);
+}
+
+.testimonial-slides .slick-dots li button::before {
+  font-size: 0.9rem;
+  color: #fff;
+  opacity: 1;
+}

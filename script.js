@@ -18,6 +18,33 @@ const closeSearchModal = () => {
 headerSearchIcon.addEventListener("click", displaySearchModal);
 closeSearchModalButton.addEventListener("click", closeSearchModal);
 
+// Scroll to top 
+const scrollToTopBtn = document.querySelector(".scroll-to-top-btn")
+scrollToTopBtn.addEventListener("click", function scrollToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+})
+
+// Scroll window
+const headerNavigation = document.querySelector(".header-navigation")
+window.onscroll = () => {
+  // Header Fixed
+  if(document.documentElement.scrollTop > 200) {
+    headerNavigation.classList.add("header-navigation--fixed")
+  } else {
+    headerNavigation.classList.remove("header-navigation--fixed")
+  }
+
+  // Display scroll to top button
+
+  if(document.documentElement.scrollTop > 1000) {
+    scrollToTopBtn.classList.add("scroll-to-top-btn--display")
+  } else if(document.documentElement.scrollTop <= 0) {
+    scrollToTopBtn.classList.remove("scroll-to-top-btn--display")
+  }
+}
+
+
+
 // Slide
 
 let mainSlideActive = 0;
@@ -307,7 +334,7 @@ function renderCourse(courses) {
     document.onmousemove = null;
   }
 
-  setInterval(nextCourseSlide, 8000)
+  setInterval(nextCourseSlide, 8000);
 
   coursesSlidesControlRight.addEventListener("click", nextCourseSlide);
   coursesSlidesControlLeft.addEventListener("click", prevCourseSlide);
@@ -319,29 +346,57 @@ function fetchCourses() {
   axios
     .get("https://60d4611a61160900173cb070.mockapi.io/courses")
     .then((res) => {
-      renderCourse(res.data)
+      renderCourse(res.data);
     });
 }
 
 // Video
 
-const videoPlayButton = document.querySelector(".video-button")
-const videoCloseButton = document.querySelector(".video-embed span")
-const videoModal = document.querySelector(".video-modal")
-const videoEmbed = document.querySelector(".video-embed")
-console.log(videoCloseButton)
+const videoPlayButton = document.querySelector(".video-button");
+const videoCloseButton = document.querySelector(".video-embed span");
+const videoModal = document.querySelector(".video-modal");
+const videoEmbed = document.querySelector(".video-embed");
+console.log(videoCloseButton);
 function videoDisplayModal() {
-  const elementIframe = document.createElement("iframe")
-  elementIframe.setAttribute("src", "https://www.youtube.com/embed/bRRtdzJH1oE")
-  elementIframe.setAttribute("frameborder", "0")
-  videoEmbed.appendChild(elementIframe)
-  videoModal.classList.add("video-modal--display")
+  const elementIframe = document.createElement("iframe");
+  elementIframe.setAttribute(
+    "src",
+    "https://www.youtube.com/embed/bRRtdzJH1oE"
+  );
+  elementIframe.setAttribute("frameborder", "0");
+  videoEmbed.appendChild(elementIframe);
+  videoModal.classList.add("video-modal--display");
 }
 
 function hideVideoModal() {
-  videoEmbed.removeChild(videoEmbed.lastChild)
-  videoModal.classList.remove("video-modal--display")
+  videoEmbed.removeChild(videoEmbed.lastChild);
+  videoModal.classList.remove("video-modal--display");
 }
 
-videoPlayButton.addEventListener("click", videoDisplayModal)
-videoCloseButton.addEventListener("click", hideVideoModal)
+videoPlayButton.addEventListener("click", videoDisplayModal);
+videoCloseButton.addEventListener("click", hideVideoModal);
+
+// Slick
+
+$(document).ready(function () {
+  // testimanial-slides
+  $(".testimonial-slides").slick({
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+  });
+
+  // logo partner
+  $(".partner-logo-container").slick({
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+  });
+});
