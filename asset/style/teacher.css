@@ -3,19 +3,19 @@
   position: relative;
   display: flex;
   margin: auto;
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding: 80px 32px 120px;
   justify-content: space-between;
 }
 
 .teacher-introduce {
   width: 40%;
+  padding: 0 16px;
 }
 
 .teacher-introduce_title {
   padding-top: 52px;
   font-weight: bold;
-} 
+}
 
 .teacher-introduce_title h5 {
   position: relative;
@@ -38,7 +38,7 @@
 }
 
 .teacher-introduce_content {
-  padding-top: 32px
+  padding-top: 32px;
 }
 
 .teacher-introduce_content a {
@@ -78,7 +78,7 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-}        
+}
 
 .teacher-content_teacher-container img {
   width: 100%;
@@ -110,4 +110,43 @@
 .teacher-content_teacher-detail span {
   color: #8a8a8a;
   font-size: 0.9rem;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1200px) {
+  .teacher {
+    max-width: 1080px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .teacher {
+    max-width: 960px;
+    flex-direction: column;
+  }
+
+  .teacher-introduce {
+    width: 100%;
+  }
+
+  .teacher-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .teacher {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .teacher {
+    max-width: 540px;
+  }
+
+  .teacher-content_teacher {
+    flex: 0 0 100%;
+  }
 }

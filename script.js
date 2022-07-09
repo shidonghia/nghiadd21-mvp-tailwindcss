@@ -1,3 +1,6 @@
+// Variable use many place
+const newsListItems = document.querySelectorAll(".new-list_lists-item");
+
 // Search modal
 const headerSearchIcon = document.querySelector(".header_search-icon");
 const searchModal = document.querySelector(".search-modal");
@@ -8,42 +11,64 @@ const closeSearchModalButton = document.querySelector(
 const displaySearchModal = () => {
   searchModal.style.opacity = 1;
   searchModal.style.zIndex = 50;
+  document.querySelector(".search-modal_search-input").focus();
 };
 
 const closeSearchModal = () => {
   searchModal.style.opacity = 0;
   searchModal.style.zIndex = 0;
+  document.querySelector(".search-modal_search-input").value = "";
 };
 
 headerSearchIcon.addEventListener("click", displaySearchModal);
 closeSearchModalButton.addEventListener("click", closeSearchModal);
 
-// Scroll to top 
-const scrollToTopBtn = document.querySelector(".scroll-to-top-btn")
+// Scroll to top
+const scrollToTopBtn = document.querySelector(".scroll-to-top-btn");
 scrollToTopBtn.addEventListener("click", function scrollToTop() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
-})
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 // Scroll window
-const headerNavigation = document.querySelector(".header-navigation")
+const headerNavigation = document.querySelector(".header-navigation");
 window.onscroll = () => {
   // Header Fixed
-  if(document.documentElement.scrollTop > 200) {
-    headerNavigation.classList.add("header-navigation--fixed")
+  if (document.documentElement.scrollTop > 200) {
+    headerNavigation.classList.add("header-navigation--fixed");
   } else {
-    headerNavigation.classList.remove("header-navigation--fixed")
+    headerNavigation.classList.remove("header-navigation--fixed");
   }
 
   // Display scroll to top button
 
-  if(document.documentElement.scrollTop > 1000) {
-    scrollToTopBtn.classList.add("scroll-to-top-btn--display")
-  } else if(document.documentElement.scrollTop <= 0) {
-    scrollToTopBtn.classList.remove("scroll-to-top-btn--display")
+  if (document.documentElement.scrollTop > 1000) {
+    scrollToTopBtn.classList.add("scroll-to-top-btn--display");
+  } else if (document.documentElement.scrollTop <= 0) {
+    scrollToTopBtn.classList.remove("scroll-to-top-btn--display");
   }
-}
+};
 
+// Header mobile
+const headerMobileMenuIcon = document.querySelector(".header-menu-mobile_icon");
+const headerMobileMenu = document.querySelector(
+  ".header-mobile-menu-container"
+);
+const headerMobileSubMenuOpenIcons = document.querySelectorAll(
+  ".header-mobile-menu_item span i"
+);
 
+headerMobileMenuIcon.addEventListener("click", () => {
+  headerMobileMenuIcon.classList.toggle("header-menu-mobile_icon--close");
+  headerMobileMenu.classList.toggle("header-mobile-menu-container--display");
+});
+
+headerMobileSubMenuOpenIcons.forEach((headerMobileSubMenuOpenIcon) => {
+  headerMobileSubMenuOpenIcon.addEventListener("click", (e) => {
+    e.target.parentNode.nextElementSibling.classList.toggle(
+      "header-mobile-sub-menu--display"
+    );
+  });
+});
 
 // Slide
 
@@ -120,6 +145,17 @@ mainSlideControlLeft.addEventListener("click", prevSlide);
 
 const preloader = document.querySelector(".prev-loader");
 window.onload = hidePreloader = () => {
+  if (window.matchMedia("(max-width: 576px)").matches) {
+    newsListItems.forEach((newsListItem) => {
+      if (newsListItem.classList.contains("new-list_lists-item")) {
+        newsListItem.classList.remove("new-list_lists-item");
+      }
+    });
+  } else {
+    newsListItems.forEach((newsListItem) => {
+      newsListItem.classList.add("new-list_lists-item");
+    });
+  }
   fetchCourses();
   setTimeout(() => {
     preloader.style.display = "none";
@@ -133,10 +169,14 @@ window.onload = hidePreloader = () => {
 // Category slide
 
 let categorySlidesTranslateX = 0;
-const widthTranslate = document.querySelector(
+let firstCategorySlideIndex = 0;
+let categorySlideWidthTranslate = document.querySelector(
   ".category-slides_slide-container"
 ).clientWidth;
 const categorySlides = document.querySelector(".category-slides");
+const categorySlidesWrapper = document.querySelector(
+  ".category-slides-wrapper"
+);
 const categorySlideControlLeft = document.querySelector(
   ".category-slides_control--left"
 );
@@ -144,17 +184,25 @@ const categorySlideControlRight = document.querySelector(
   ".category-slides_control--right"
 );
 
+let numberOfCategorySlideOnScreen = Math.floor(
+  categorySlidesWrapper.clientWidth / categorySlideWidthTranslate
+);
+
 function prevCategorySlide() {
-  if (categorySlidesTranslateX > 0) {
-    categorySlidesTranslateX -= widthTranslate;
-    categorySlides.style.transform = `translateX(-${categorySlidesTranslateX}px)`;
+  if (firstCategorySlideIndex > 0) {
+    firstCategorySlideIndex--;
+    categorySlides.style.transform = `translateX(-${
+      categorySlideWidthTranslate * firstCategorySlideIndex
+    }px)`;
   }
 }
 
 function nextCategorySlide() {
-  if (categorySlidesTranslateX < widthTranslate * 3) {
-    categorySlidesTranslateX += widthTranslate;
-    categorySlides.style.transform = `translateX(-${categorySlidesTranslateX}px)`;
+  if (firstCategorySlideIndex < 6 - numberOfCategorySlideOnScreen) {
+    firstCategorySlideIndex++;
+    categorySlides.style.transform = `translateX(-${
+      categorySlideWidthTranslate * firstCategorySlideIndex
+    }px)`;
   }
 }
 
@@ -228,7 +276,7 @@ function renderCourse(courses) {
     ".courses-header_control-slide-right"
   );
   const initialCoursesSlideLength = coursesSlides.length;
-  const courseTranslateX = coursesSlides[0].clientWidth;
+  let courseTranslateX = coursesSlides[0].clientWidth;
   let maxItemOnScreen = coursesSlideContainer.clientWidth / courseTranslateX;
   let firstSlideCourseOnScreen = 1;
   let lastSlideCourseOnScreen = firstSlideCourseOnScreen + maxItemOnScreen - 1;
@@ -254,6 +302,8 @@ function renderCourse(courses) {
     .getComputedStyle(coursesContainer)
     .marginLeft.split("p")[0];
 
+  coursesSlideContainer.style.left = -courseTranslateX * 2 + "px";
+
   function nextCourseSlide(e, initialPositon) {
     coursesSlideContainer.classList.add("courses-slides-container--move");
     firstSlideCourseOnScreen++;
@@ -264,6 +314,7 @@ function renderCourse(courses) {
       coursesSlideContainer.offsetLeft - marginLeftCoursesContainer;
     console.log(pos);
     coursesSlideContainer.style.left = pos - courseTranslateX + "px";
+    console.log("x", courseTranslateX);
   }
 
   function prevCourseSlide(e, initialPositon) {
@@ -334,12 +385,51 @@ function renderCourse(courses) {
     document.onmousemove = null;
   }
 
-  setInterval(nextCourseSlide, 8000);
+  // setInterval(nextCourseSlide, 8000);
 
   coursesSlidesControlRight.addEventListener("click", nextCourseSlide);
   coursesSlidesControlLeft.addEventListener("click", prevCourseSlide);
   coursesSlideContainer.addEventListener("transitionend", checkFirstSlideIndex);
   coursesSlideContainer.addEventListener("mousedown", dragStart);
+
+  // Resize event
+  window.onresize = () => {
+    // Category slide
+    categorySlideWidthTranslate = document.querySelector(
+      ".category-slides_slide-container"
+    ).clientWidth;
+    numberOfCategorySlideOnScreen = Math.round(
+      categorySlidesWrapper.clientWidth / categorySlideWidthTranslate
+    );
+    if (firstCategorySlideIndex > 3) {
+      firstCategorySlideIndex = 3;
+    }
+    categorySlides.style.transform = `translateX(-${
+      categorySlideWidthTranslate * firstCategorySlideIndex
+    }px)`;
+
+    // Courses slide
+    courseTranslateX = coursesSlides[0].clientWidth;
+    maxItemOnScreen = Math.round(
+      coursesSlideContainer.clientWidth / courseTranslateX
+    );
+    coursesSlideContainer.style.left =
+      -firstSlideCourseOnScreen * courseTranslateX + "px";
+
+    // News
+
+    if (window.matchMedia("(max-width: 576px)").matches) {
+      newsListItems.forEach((newsListItem) => {
+        if (newsListItem.classList.contains("new-list_lists-item")) {
+          newsListItem.classList.remove("new-list_lists-item");
+        }
+      });
+    } else {
+      newsListItems.forEach((newsListItem) => {
+        newsListItem.classList.add("new-list_lists-item");
+      });
+    }
+  };
 }
 
 function fetchCourses() {
@@ -384,19 +474,41 @@ $(document).ready(function () {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     slidesToShow: 2,
     slidesToScroll: 1,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
 
   // logo partner
   $(".partner-logo-container").slick({
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   });
 });

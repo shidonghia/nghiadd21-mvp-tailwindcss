@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   z-index: 6;
-  height: 900px;
+  min-height: 900px;
   padding: 64px 0 200px 0;
   /* overflow: hidden; */
 }
@@ -16,7 +16,7 @@
   top: 56%;
   transform: translateY(-50%);
   left: 52%;
-  background-image: url('../images/about/background.png');
+  background-image: url("../images/about/background.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
@@ -24,7 +24,8 @@
 
 .about-content {
   width: 38%;
-  height: 480px;
+  min-height: 480px;
+  padding-left: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -44,7 +45,7 @@
 .about-content_header h5::before {
   content: "";
   position: absolute;
-  width: 40%; 
+  width: 40%;
   border-bottom: 2px solid var(--primary-color);
   top: 100%;
 }
@@ -55,7 +56,7 @@
 }
 
 .about-content_introduce {
-  padding-top: 32px;
+  padding: 32px 0;
   flex: 1;
   position: relative;
 }
@@ -66,14 +67,14 @@
 
 .about-content_introduce a {
   position: absolute;
-  bottom: 0;
+  bottom: 48px;
   display: inline-block;
   width: 160px;
   height: 52px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;  
+  border-radius: 8px;
   font-weight: bold;
   background-color: var(--primary-color);
   transition: all 0.4s linear;
@@ -111,7 +112,6 @@
 }
 
 .about-event_event-list {
-
 }
 
 .about-event_event {
@@ -154,4 +154,65 @@
   margin-right: 4px;
 }
 
+/* Responsive */
 
+@media screen and (max-width: 992px) {
+  .about .custom-container {
+    flex-direction: column;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .about::after {
+    overflow: hidden;
+    width: 30%;
+    height: 30%;
+    top: 76%;
+    left: 68%;
+    transform: translateY(-50%);
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about-event-container {
+    margin: 0 24px;
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-event {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .about-event-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .about::after {
+    width: 52%;
+    height: 30%;
+    top: 68%;
+    left: 48%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-content_introduce {
+    padding-bottom: 0;
+  }
+
+  .about-content_introduce a {
+    margin-top: 48px;
+    position: static;
+  }
+
+  .about::after {
+    top: 76%;
+  }
+}

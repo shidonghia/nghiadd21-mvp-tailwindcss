@@ -9,4 +9,35 @@
   display: flex;
   align-items: flex-end;
   margin: auto;
+  padding: 0 32px;
+}
+
+.partner-logo_img img {
+  margin: auto;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1200px) {
+  .partner-logo-container {
+    max-width: 1080px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .partner-logo-container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .partner-logo-container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .partner-logo-container {
+    max-width: 540px;
+  }
 }

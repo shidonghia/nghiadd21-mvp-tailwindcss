@@ -49,3 +49,21 @@ a:hover {
   background-color: #021d3a;
   color: var(--white-color);
 }
+
+@media screen and (max-width: 1200px) {
+  .custom-container {
+    max-width: 1080px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .custom-container {
+    max-width: 960px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-container {
+    max-width: 720px !important;
+  }
+}
