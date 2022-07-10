@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./asset/style/base.css" />
+    <link rel="stylesheet" href="./asset/style/preloader.css" />
+    <link rel="stylesheet" href="./asset/style/header.css" />
+    <link rel="stylesheet" href="./asset/style/footer.css" />
+    <link rel="stylesheet" href="./asset/style/register.css" />
+    <link rel="icon" href="/asset/images/site-favicon.png" sizes="32x32" />
+    <title>EDUBIN</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-top">
+        <div class="custom-container">
+          <div class="header-contact">
+            <ul>
+              <li>
+                <a href="mailto:nghiadd21@ghtk.co">
+                  <i class="fa-solid fa-envelope mr-2"></i>
+                  nghiadd21@ghtk.co
+                </a>
+              </li>
+              <li>
+                <a href="tel:+8499409514">
+                  <i class="fa-solid fa-phone mr-2"></i>
+                  +8499409514
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="header-top-right">
+            <div class="header-social">
+              <span class="mr-2">Follow us : </span>
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="header-login-register ml-2">
+              <button class="header-login-btn">Login</button>
+              <span>/</span>
+              <button class="header-resgister-btn">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-navigation">
+        <div class="custom-container header-navigation-container">
+          <div class="header-logo">
+            <a href="/">
+              <img src="./asset/images/logo.png" alt="logo web" />
+            </a>
+          </div>
+          <div class="header-menu-container">
+            <ul class="header-menu">
+              <li class="header-menu_item header-menu_item--active">
+                <a href="/">Home</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item header-sub-menu_item--active">
+                    <a href="/">Home 1</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Home 2</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Home 3</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Home 4</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Page</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">About us</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Gallery</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Privacy policy</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Courses</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">Courses</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Course single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Events</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">Events list 1</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Events list 2</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Event single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Teachers</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">Teachers</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Teachers 2</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Teacher single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Blog</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">Blog</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Blog single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Shop</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">Shop</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Shop single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-menu_item">
+                <a href="/">Contact</a>
+                <ul class="header-sub-menu">
+                  <li class="header-sub-menu_item">
+                    <a href="/">Contact us</a>
+                  </li>
+                  <li class="header-sub-menu_item">
+                    <a href="/">Contact us 2</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header-nav-icon">
+            <span class="header_search-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <span class="header_cart-icon">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </span>
+          </div>
+          <div class="header-menu-mobile_icon-container">
+            <div class="header-menu-mobile_icon">
+              <span class="header-menu-mobile_icon-item"></span>
+              <span class="header-menu-mobile_icon-item"></span>
+              <span class="header-menu-mobile_icon-item"></span>
+            </div>
+          </div>
+
+          <div class="header-mobile-menu-container">
+            <ul class="header-mobile-menu">
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Home </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Home 1</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Home 2</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Home 3</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Home 4</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Page </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">About us</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Gallery</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Privacy policy</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">FAQ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Courses </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Courses</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Course single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/">Events</a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Events list 1</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Events list 2</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Event single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Teachers </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Teachers</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Teachers 2</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Teacher single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Blog </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Blog</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Blog single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Shop </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Shop</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Shop single</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header-mobile-menu_item">
+                <span>
+                  <a href="/"> Contact </a>
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <ul class="header-mobile-sub-menu">
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Contact us</a>
+                  </li>
+                  <li class="header-mobile-sub-menu_item">
+                    <a href="/">Contact us 2</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="register">
+      <div class="prev-loader">
+        <div class="loader-container">
+          <i class="fa-solid fa-spinner prevloader_loading-icon"></i>
+        </div>
+      </div>
+
+      <div class="register-header">
+        <div class="register-container">
+          <div class="register-header-container">
+            <h2>Student Registration</h2>
+            <div class="register-breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/register.html">Student Registration</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="register-form">
+        <div class="register-container">
+          <div class="register-form-container">
+            <form class="register-inputs">
+              <div class="register-inputs_input-container">
+                <label for="first-name">First Name</label>
+                <input
+                  required
+                  type="text"
+                  class="register_inputs_input"
+                  id="first-name"
+                />
+                <span class="register-input_error">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  First name required, include only letters and spaces
+                </span>
+                <span class="register-input_valid">
+                  <i class="fa-solid fa-check"></i>
+                  First name valid
+                </span>
+              </div>
+              <div class="register-inputs_input-container">
+                <label for="last-name">Last Name</label>
+                <input
+                  required
+                  type="text"
+                  class="register_inputs_input"
+                  id="last-name"
+                />
+                <span class="register-input_error">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Last name required, include only letters and spaces
+                </span>
+                <span class="register-input_valid">
+                  <i class="fa-solid fa-check"></i>
+                  Last name valid
+                </span>
+              </div>
+              <div class="register-inputs_input-container">
+                <label for="user-name">User Name</label>
+                <input
+                  required
+                  type="text"
+                  class="register_inputs_input"
+                  id="user-name"
+                />
+                <span class="register-input_error">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  User name required, include only letters and numbers
+                </span>
+                <span class="register-input_valid">
+                  <i class="fa-solid fa-check"></i>
+                  User name valid
+                </span>
+              </div>
+              <div class="register-inputs_input-container">
+                <label for="email">E-Mail</label>
+                <input
+                  required
+                  type="text"
+                  class="register_inputs_input"
+                  id="email"
+                />
+                <span class="register-input_error">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Email required and must valid
+                </span>
+                <span class="register-input_valid">
+                  <i class="fa-solid fa-check"></i>
+                  Email valid
+                </span>
+              </div>
+              <div class="register-inputs_input-container">
+                <label for="password">Password</label>
+                <input
+                  required
+                  type="password"
+                  class="register_inputs_input"
+                  id="password"
+                />
+                <span class="register-input_error">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Password required, include only letters, numbers and at least
+                  8 characters
+                </span>
+                <span class="register-input_valid">
+                  <i class="fa-solid fa-check"></i>
+                  Password valid
+                </span>
+              </div>
+              <div class="register-inputs_input-container">
+                <label for="password-confirm">Password Confirmation</label>
+                <input
+                  required
+                  type="password"
+                  class="register_inputs_input"
+                  id="password-confirm"
+                />
+                <span class="register-input_error">
+                  <i class="fa-solid fa-circle-exclamation"></i>
+                  Re-entered password required and must same as password
+                </span>
+                <span class="register-input_valid">
+                  <i class="fa-solid fa-check"></i>
+                  Re-entered password valid
+                </span>
+              </div>
+            </form>
+
+            <button class="register-form-submit-btn">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-top">
+        <div class="footer-top-container">
+          <div class="footer-top_about">
+            <div class="footer-top_about-img">
+              <img src="/asset/images/footer-logo.png" alt="Footer logo" />
+            </div>
+            <p>
+              Gravida nibh vel velit auctor aliquetn quibibendum auci elit cons
+              equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh
+              vulputate.
+            </p>
+            <div class="footer-top_about-social">
+              <a href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="https://www.google.com" target="_blank">
+                <i class="fa-brands fa-google-plus"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram-square"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-top_sitemap">
+            <h3>Sitemap</h3>
+            <div class="footer-top_site-map-container">
+              <div class="footer-top_site-map-list">
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Home</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">About us</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Courses</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">News</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Event</a>
+                </span>
+              </div>
+              <div class="footer-top_site-map-list">
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Gallery</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Shop</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Teachers</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Support</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Contact</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-top_support">
+            <h3>Support</h3>
+            <div class="footer-top_site-map-container">
+              <div class="footer-top_site-map-list">
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">FAQS</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Privacy</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Policy</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Support</a>
+                </span>
+                <span class="footer-top_site-map-item">
+                  <i class="fa-solid fa-angle-right"></i>
+                  <a href="/">Documentation</a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-top_contact">
+            <h3>Contact Us</h3>
+            <div class="footer-top_contact-detail">
+              <p>
+                <i class="fa-solid fa-house"></i>
+                <span>8 Pham Hung, Nam Tu Liem, Ha Noi, Viet Nam</span>
+              </p>
+              <p>
+                <i class="fa-solid fa-phone"></i>
+                <span>+399409514</span>
+              </p>
+              <p>
+                <i class="fa-solid fa-envelope"></i>
+                <span>nghiadd21@ghtk.co</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="footer-copyright-container">
+            <p>© Copyrights 2020 Edubin All rights reserved.</p>
+            <p>Designed by <strong>Shido Nghia</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/register.js"></script>
+  </body>
+</html>

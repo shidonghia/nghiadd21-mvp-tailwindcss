@@ -438,10 +438,25 @@
     padding: 4px 8px;
     display: none;
     z-index: -10;
+    transform-origin: top center;
+    animation: submenuMobileDisplay 0.3s ease-in-out forwards;
   }
 
   .header-mobile-sub-menu--display {
     display: block;
+    z-index: 10;
+  }
+
+  @keyframes submenuMobileDisplay {
+    0% {
+      transform: scaleY(0);
+    }
+    80% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
   }
 
   .header-mobile-sub-menu_item {
